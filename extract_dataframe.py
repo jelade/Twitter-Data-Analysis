@@ -29,6 +29,11 @@ class TweetDfExtractor:
     ------
     dataframe
     """
+    def parsetweets_json(self, json_file):
+        json_data = json.load(json_file)
+        df = pd.DataFrame(json_data)
+        return(df)
+    
     def __init__(self, tweets_list):
         
         self.tweets_list = tweets_list
